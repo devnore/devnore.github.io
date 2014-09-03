@@ -1,0 +1,329 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Simons Blogg</title>
+	<meta name="author" content="Simon Ingelsson">
+
+	
+	<meta name="description" content="blog, thoughts Octopress Starting using octopress. I'v decided to try using octopress in favor of wordpress. I&rsquo;m hoping this will go better &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/blog/atom.xml" rel="alternate" title="Simons Blogg" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://devnore.github.io/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<img src="http://www.gravatar.com/avatar/1a586777bafc1e0dae620e8046c7645f?s=160" alt="Profile Picture" style="width: 160px;" />
+	
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="http://about.me/shashankmehta">About</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+			<a class="twitter" href="http://twitter.com/_DeVVaN_" title="Twitter">Twitter</a>
+		
+		
+			<a class="github" href="https://github.com/devnore" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/blog/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-03T15:01:50+02:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/thoughts/'>thoughts</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/09/03/octopress/" itemprop="url">Octopress</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>Starting using octopress.</h2>
+
+<p>I&#8217;v decided to try using octopress in favor of wordpress. I&rsquo;m hoping this will go better than my attempt to use <a href="https://ghost.org">Ghost</a> .</p>
+
+<p>One of the biggest best features of Wordpress is the Media Library. And without Wordpress backing this blog I have to figure out a good workflow for adding images to my blog. I&rsquo;m thinking that using S3-style buckets tied in to our <a href="http://ceph.com">Ceph</a> deployment at work. But this is not currently up and running so in the mean time i just have to use dropbox or add a custom rsync to octopress to push images as well as the blog.</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-28T16:12:38+02:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/osx/'>osx</a>, <a class='category' href='/blog/categories/vagrant/'>vagrant</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/08/28/dnsmasq-in-osx/" itemprop="url">DNSMASQ in OSX</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>Installing Dnsmasq</h2>
+
+<pre><code>brew up &amp;&amp; brew install dnsmasq
+</code></pre>
+
+<p>The installation process will output several commands that you can use to start Dnsmasq automatically with a default configuration. I used the following commands but you should use whichever commands brew tells you to:</p>
+
+<h2>Configuring Dnsmasq</h2>
+
+<p>Now that you have Dnsmasq installed and running, it’s time to configure it! The configuration file lives at <code>/usr/local/etc/dnsmasq.conf</code> by default, so open this file in your favourite editor.</p>
+
+<p>One the many, many things that Dnsmasq can do is compare DNS requests against a database of patterns and use these to determine the correct response. I use this functionality to match any request which ends in .dev and send <code>10.200.200.10</code> in response. The Dnsmasq configuration directive to do this is very simple:</p>
+
+<pre><code>address=/dev/10.200.200.10
+</code></pre>
+
+<p>Insert this into your <code>/usr/local/etc/dnsmasq.conf</code> file (I put it near the example <code>address=/double-click.net/127.0.0.1</code> entry just to keep them all together) and save the file.</p>
+
+<p>You may need to restart Dnsmasq to get it to recognise this change. Restarting Dnsmasq is the same as any other service running under <code>launchd</code>:</p>
+
+<pre><code>sudo launchctl stop homebrew.mxcl.dnsmasq
+sudo launchctl start homebrew.mxcl.dnsmasq
+</code></pre>
+
+<p>You can test Dnsmasq by sending it a DNS query using the <code>dig</code> utility. Pick a name ending in <code>dev</code> and use dig to query your new DNS server:</p>
+
+<pre><code>dig local.site.dev @127.0.0.1
+</code></pre>
+
+<p>You should get back a response something like:</p>
+
+<pre><code>;; ANSWER SECTION:
+local.site.dev. 0 IN    A   10.200.200.10
+</code></pre>
+
+<h2>Configuring OS X</h2>
+
+<pre><code>sudo mkdir -p /etc/resolver
+# Create file for domain .dev
+sudo tee /etc/resolver/dev &gt;/dev/null &lt;&lt;EOF
+nameserver 127.0.0.1
+EOF
+</code></pre>
+
+<h2>Testing.</h2>
+
+<pre><code># Make sure you haven't broken your DNS.
+ping -c 1 www.google.com
+# Check that .dev names work
+ping -c 1 this.is.a.test.dev
+ping -c 1 iam.the.walrus.dev
+</code></pre>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-07T16:18:47+02:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/home-electronics/'>home electronics</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/04/07/raspberry-pi/" itemprop="url">Raspberry Pi</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>A while ago I bought a Raspberry Pi (model B) planning to build an Entertainmentsystem. The main reason for this was that I had gotten tired on using My TVs builtin player that did not support any of the format I wanted to use.</p>
+
+<p>After looking around on the alternatives I decided there where three ways to go.</p>
+
+<ol>
+<li>Raspbmc</li>
+<li>OpenELEC</li>
+<li>Build it myself.</li>
+</ol>
+
+
+<p>As building it myself would take me to much time. I opted for either alternative 1 or 2. After looking at some vs writeups and youtube reviews it seamed to me that rasbmc was the faster of the two (less sluggish in menus and such).</p>
+
+<p>Installing rasbmc was a breeze so I will not cover it, have a peek over at the official <a href="http://www.raspbmc.com/">www.raspbmc.com</a>.</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-22T15:14:59+01:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/home-electronics/'>home electronics</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/01/22/synology/" itemprop="url">Synology Diskstation</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>After looking at a D-link NAS that I borrowed from a friend I decided that i should buy a real NAS.</p>
+
+<p>I Finally settled on the Synology Diskstation DS214<a href="http://simon.ispy.se/blog/wp-content/uploads/2014/01/DS214.jpg"><img src="http://simon.ispy.se/blog/wp-content/uploads/2014/01/DS214.jpg" alt="DS214" /></a></p>
+
+<p>I&#8217;v gone through the checklist, migrating all unarranged photos (from 4 different iphoto-libraries, and my very old photos from pre 2008 ) into the NAS.</p>
+
+		
+		
+	</div>
+
+</article>
+
+</div>
+<nav id="pagenavi">
+    
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Simon Ingelsson
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>

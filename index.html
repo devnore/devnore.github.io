@@ -1,1 +1,390 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Simons Blogg</title>
+	<meta name="author" content="Simon Ingelsson">
+
+	
+	<meta name="description" content="blog, thoughts Octopress Starting using octopress. I'v decided to try using octopress in favor of wordpress. I&rsquo;m hoping this will go better &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/blog/atom.xml" rel="alternate" title="Simons Blogg" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://172.16.1.6:81//">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<img src="http://www.gravatar.com/avatar/1a586777bafc1e0dae620e8046c7645f?s=160" alt="Profile Picture" style="width: 160px;" />
+	
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+			<a class="twitter" href="http://twitter.com/_DeVVaN_" title="Twitter">Twitter</a>
+		
+		
+			<a class="github" href="https://github.com/devnore" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/blog/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-03T15:01:50+02:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/thoughts/'>thoughts</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/09/03/octopress/" itemprop="url">Octopress</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>Starting using octopress.</h2>
+
+<p>I&#8217;v decided to try using octopress in favor of wordpress. I&rsquo;m hoping this will go better than my attempt to use <a href="https://ghost.org">Ghost</a> .</p>
+
+<p>One of the biggest best features of Wordpress is the Media Library. And without Wordpress backing this blog I have to figure out a good workflow for adding images to my blog. I&rsquo;m thinking that using S3-style buckets tied in to our <a href="http://ceph.com">Ceph</a> deployment at work. But this is not currently up and running so in the mean time i just have to use dropbox or add a custom rsync to octopress to push images as well as the blog.</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-28T16:12:38+02:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/osx/'>osx</a>, <a class='category' href='/blog/categories/vagrant/'>vagrant</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/08/28/dnsmasq-in-osx/" itemprop="url">DNSMASQ in OSX</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>Installing Dnsmasq</h2>
+
+<pre><code>brew up &amp;&amp; brew install dnsmasq
+</code></pre>
+
+<p>The installation process will output several commands that you can use to start Dnsmasq automatically with a default configuration. I used the following commands but you should use whichever commands brew tells you to:</p>
+
+<h2>Configuring Dnsmasq</h2>
+
+<p>Now that you have Dnsmasq installed and running, it’s time to configure it! The configuration file lives at <code>/usr/local/etc/dnsmasq.conf</code> by default, so open this file in your favourite editor.</p>
+
+<p>One the many, many things that Dnsmasq can do is compare DNS requests against a database of patterns and use these to determine the correct response. I use this functionality to match any request which ends in .dev and send <code>10.200.200.10</code> in response. The Dnsmasq configuration directive to do this is very simple:</p>
+
+<pre><code>address=/dev/10.200.200.10
+</code></pre>
+
+<p>Insert this into your <code>/usr/local/etc/dnsmasq.conf</code> file (I put it near the example <code>address=/double-click.net/127.0.0.1</code> entry just to keep them all together) and save the file.</p>
+
+<p>You may need to restart Dnsmasq to get it to recognise this change. Restarting Dnsmasq is the same as any other service running under <code>launchd</code>:</p>
+
+<pre><code>sudo launchctl stop homebrew.mxcl.dnsmasq
+sudo launchctl start homebrew.mxcl.dnsmasq
+</code></pre>
+
+<p>You can test Dnsmasq by sending it a DNS query using the <code>dig</code> utility. Pick a name ending in <code>dev</code> and use dig to query your new DNS server:</p>
+
+<pre><code>dig local.site.dev @127.0.0.1
+</code></pre>
+
+<p>You should get back a response something like:</p>
+
+<pre><code>;; ANSWER SECTION:
+local.site.dev. 0 IN    A   10.200.200.10
+</code></pre>
+
+<h2>Configuring OS X</h2>
+
+<pre><code>sudo mkdir -p /etc/resolver
+# Create file for domain .dev
+sudo tee /etc/resolver/dev &gt;/dev/null &lt;&lt;EOF
+nameserver 127.0.0.1
+EOF
+</code></pre>
+
+<h2>Testing.</h2>
+
+<pre><code># Make sure you haven't broken your DNS.
+ping -c 1 www.google.com
+# Check that .dev names work
+ping -c 1 this.is.a.test.dev
+ping -c 1 iam.the.walrus.dev
+</code></pre>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-07T16:27:18+02:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/hemmateknik/'>hemmateknik</a>, <a class='category' href='/blog/categories/mobler/'>möbler</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/04/07/nytt-chassi/" itemprop="url">Nytt Chassi</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Suget efter ett nytt chassi stiger för var dag som går. Nu börjar det dock bli så grovt att det snart blir dags för en beställning, speciellt då jag fixat ny stomme till skrivbordet som går att höja och sänka. Jag har sen snart två år ägt en upphängning för chassi som passar till denna stomme dock är problemet att mitt befintliga chassi är på tok för stort för att få plats i denna upphängning.</p>
+
+<p><a href="http://simon.ispy.se/blog/wp-content/uploads/2014/04/1692980.jpg"><img src="http://simon.ispy.se/blog/wp-content/uploads/2014/04/1692980-300x257.jpg" alt="CORSAIR CARBIDE 200R ATX BLACK" /></a></p>
+
+<p>Efter mycket om och men så beslutade jag att skippa inköpet av detta chassit. Med det nya skrivbordet så löste jag det med upphängning vid sidan av bordet vilket betyder att mitt gamla monsterchassi får plats.</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-07T16:21:34+02:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mobler/'>möbler</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/04/07/ny-stomme-till-skrivbordet/" itemprop="url">Ny Stomme Till Skrivbordet</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Nu har jag äntligen fått tummen ur och varit på kontoret och hämtat det skrivbordet som jag tingade vid flytten. Eller ja, bara stommen till det har jag tagit hem och bytt ut den gamla stommen. Så nu kan jag äntligen höja och sänka skrivbordet så att jag kan stå och &ldquo;jobba&rdquo;</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-07T16:18:47+02:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/hemmateknik/'>hemmateknik</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/04/07/raspberry-pi/" itemprop="url">Raspberry Pi</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Här ska det stå lite om min raspberry som jag för tillfället kör raspbmc på</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-22T15:14:59+01:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/hemmateknik/'>hemmateknik</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/01/22/synology/" itemprop="url">Synology Diskstation</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Efter att ha lekt en stund med den D-link Sharestation (eller vad den nu hette) som jag lånat av Mattias så bestämmde jag mig för att införskaffa en riktig NAS.</p>
+
+<p>Det blev en Synology Diskstation DS214
+<a href="http://simon.ispy.se/blog/wp-content/uploads/2014/01/DS214.jpg"><img src="http://simon.ispy.se/blog/wp-content/uploads/2014/01/DS214.jpg" alt="DS214" /></a></p>
+
+<p>Efter mycket pill så har jag äntligen fått över både mitt och hildas iPhoto-bibliotek till denna underbara lilla svarta burk.</p>
+
+		
+		
+	</div>
+
+</article>
+
+</div>
+<nav id="pagenavi">
+    
+    
+    <div class="center"><a href="/archives">Blog Archives</a></div>
+</nav></div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Simon Ingelsson
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>

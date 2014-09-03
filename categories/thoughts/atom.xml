@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: thoughts | Simons Blogg]]></title>
+  <link href="http://devnore.github.io/blog/categories/thoughts/atom.xml" rel="self"/>
+  <link href="http://devnore.github.io/"/>
+  <updated>2014-09-04T00:49:57+02:00</updated>
+  <id>http://devnore.github.io/</id>
+  <author>
+    <name><![CDATA[Simon Ingelsson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress]]></title>
+    <link href="http://devnore.github.io/blog/2014/09/03/octopress/"/>
+    <updated>2014-09-03T15:01:50+02:00</updated>
+    <id>http://devnore.github.io/blog/2014/09/03/octopress</id>
+    <content type="html"><![CDATA[<h2>Starting using octopress.</h2>
+
+<p>I&#8217;v decided to try using octopress in favor of wordpress. I&rsquo;m hoping this will go better than my attempt to use <a href="https://ghost.org">Ghost</a> .</p>
+
+<p>One of the biggest best features of Wordpress is the Media Library. And without Wordpress backing this blog I have to figure out a good workflow for adding images to my blog. I&rsquo;m thinking that using S3-style buckets tied in to our <a href="http://ceph.com">Ceph</a> deployment at work. But this is not currently up and running so in the mean time i just have to use dropbox or add a custom rsync to octopress to push images as well as the blog.</p>
+]]></content>
+  </entry>
+  
+</feed>

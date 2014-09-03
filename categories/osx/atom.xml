@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: osx | Simons Blogg]]></title>
+  <link href="http://devnore.github.io/blog/categories/osx/atom.xml" rel="self"/>
+  <link href="http://devnore.github.io/"/>
+  <updated>2014-09-04T00:49:57+02:00</updated>
+  <id>http://devnore.github.io/</id>
+  <author>
+    <name><![CDATA[Simon Ingelsson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[DNSMASQ IN OSX]]></title>
+    <link href="http://devnore.github.io/blog/2014/08/28/dnsmasq-in-osx/"/>
+    <updated>2014-08-28T16:12:38+02:00</updated>
+    <id>http://devnore.github.io/blog/2014/08/28/dnsmasq-in-osx</id>
+    <content type="html"><![CDATA[<h2>Installing Dnsmasq</h2>
+
+<pre><code>brew up &amp;&amp; brew install dnsmasq
+</code></pre>
+
+<p>The installation process will output several commands that you can use to start Dnsmasq automatically with a default configuration. I used the following commands but you should use whichever commands brew tells you to:</p>
+
+<h2>Configuring Dnsmasq</h2>
+
+<p>Now that you have Dnsmasq installed and running, it’s time to configure it! The configuration file lives at <code>/usr/local/etc/dnsmasq.conf</code> by default, so open this file in your favourite editor.</p>
+
+<p>One the many, many things that Dnsmasq can do is compare DNS requests against a database of patterns and use these to determine the correct response. I use this functionality to match any request which ends in .dev and send <code>10.200.200.10</code> in response. The Dnsmasq configuration directive to do this is very simple:</p>
+
+<pre><code>address=/dev/10.200.200.10
+</code></pre>
+
+<p>Insert this into your <code>/usr/local/etc/dnsmasq.conf</code> file (I put it near the example <code>address=/double-click.net/127.0.0.1</code> entry just to keep them all together) and save the file.</p>
+
+<p>You may need to restart Dnsmasq to get it to recognise this change. Restarting Dnsmasq is the same as any other service running under <code>launchd</code>:</p>
+
+<pre><code>sudo launchctl stop homebrew.mxcl.dnsmasq
+sudo launchctl start homebrew.mxcl.dnsmasq
+</code></pre>
+
+<p>You can test Dnsmasq by sending it a DNS query using the <code>dig</code> utility. Pick a name ending in <code>dev</code> and use dig to query your new DNS server:</p>
+
+<pre><code>dig local.site.dev @127.0.0.1
+</code></pre>
+
+<p>You should get back a response something like:</p>
+
+<pre><code>;; ANSWER SECTION:
+local.site.dev. 0 IN    A   10.200.200.10
+</code></pre>
+
+<h2>Configuring OS X</h2>
+
+<pre><code>sudo mkdir -p /etc/resolver
+# Create file for domain .dev
+sudo tee /etc/resolver/dev &gt;/dev/null &lt;&lt;EOF
+nameserver 127.0.0.1
+EOF
+</code></pre>
+
+<h2>Testing.</h2>
+
+<pre><code># Make sure you haven't broken your DNS.
+ping -c 1 www.google.com
+# Check that .dev names work
+ping -c 1 this.is.a.test.dev
+ping -c 1 iam.the.walrus.dev
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

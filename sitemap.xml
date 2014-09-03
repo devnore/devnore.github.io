@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>http://devnore.github.io/blog/2014/09/03/octopress/</loc>
+    <lastmod>2014-09-03T15:01:50+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://devnore.github.io/blog/2014/08/28/dnsmasq-in-osx/</loc>
+    <lastmod>2014-08-28T16:12:38+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://devnore.github.io/blog/2014/04/07/raspberry-pi/</loc>
+    <lastmod>2014-04-07T16:18:47+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://devnore.github.io/blog/2014/01/22/synology/</loc>
+    <lastmod>2014-01-22T15:14:59+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://devnore.github.io/categories/</loc>
+    <lastmod>2014-09-04T00:44:52+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://devnore.github.io/archives/</loc>
+    <lastmod>2014-09-04T00:44:52+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://devnore.github.io/blog/archives/</loc>
+    <lastmod>2014-09-04T00:44:52+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://devnore.github.io/</loc>
+    <lastmod>2014-09-04T00:44:52+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://devnore.github.io/blog/categories/</loc>
+    <lastmod>2014-09-04T00:44:52+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://devnore.github.io/posts/</loc>
+    <lastmod>2014-09-04T00:44:52+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://devnore.github.io/search.html</loc>
+    <lastmod>2014-09-04T00:44:52+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+</urlset>

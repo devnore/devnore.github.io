@@ -1,0 +1,18 @@
+---
+author: simon
+comments: false
+date: 2014-01-22 14:14:59+00:00
+layout: post
+slug: synology
+title: Synology Diskstation
+categories:
+- Home Electronics
+---
+
+After looking at a D-link NAS that I borrowed from a friend I decided that i should buy a real NAS. 
+
+I Finally settled on the Synology Diskstation DS214[![DS214](http://simon.ispy.se/blog/wp-content/uploads/2014/01/DS214.jpg)](http://simon.ispy.se/blog/wp-content/uploads/2014/01/DS214.jpg)
+
+
+I'v gone through the checklist, migrating all unarranged photos (from 4 different iphoto-libraries, and my very old photos from pre 2008 ) into the NAS.
+

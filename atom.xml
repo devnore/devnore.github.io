@@ -4,7 +4,7 @@
   <title><![CDATA[Simons Blogg]]></title>
   <link href="http://devnore.github.io/atom.xml" rel="self"/>
   <link href="http://devnore.github.io/"/>
-  <updated>2014-09-03T23:56:19+02:00</updated>
+  <updated>2014-09-04T00:13:30+02:00</updated>
   <id>http://devnore.github.io/</id>
   <author>
     <name><![CDATA[Simon Ingelsson]]></name>
@@ -91,7 +91,20 @@ ping -c 1 iam.the.walrus.dev
     <link href="http://devnore.github.io/blog/2014/04/07/raspberry-pi/"/>
     <updated>2014-04-07T16:18:47+02:00</updated>
     <id>http://devnore.github.io/blog/2014/04/07/raspberry-pi</id>
-    <content type="html"><![CDATA[<p>Här ska det stå lite om min raspberry som jag för tillfället kör raspbmc på</p>
+    <content type="html"><![CDATA[<p>A while ago I bought a Raspberry Pi (model B) planning to build an Entertainmentsystem. The main reason for this was that I had gotten tired on using My TVs builtin player that did not support any of the format I wanted to use.</p>
+
+<p>After looking around on the alternatives I decided there where three ways to go.</p>
+
+<ol>
+<li>Raspbmc</li>
+<li>OpenELEC</li>
+<li>Build it myself.</li>
+</ol>
+
+
+<p>As building it myself would take me to much time. I opted for either alternative 1 or 2. After looking at some vs writeups and youtube reviews it seamed to me that rasbmc was the faster of the two (less sluggish in menus and such).</p>
+
+<p>Installing rasbmc was a breeze so I will not cover it, have a peek over at the official <a href="http://www.raspbmc.com/">www.raspbmc.com</a>.</p>
 ]]></content>
   </entry>
   

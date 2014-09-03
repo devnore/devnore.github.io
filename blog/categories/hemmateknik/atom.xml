@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: hemmateknik | Simons Blogg]]></title>
-  <link href="http://172.16.1.6:81//blog/categories/hemmateknik/atom.xml" rel="self"/>
-  <link href="http://172.16.1.6:81//"/>
-  <updated>2014-09-03T22:30:56+02:00</updated>
-  <id>http://172.16.1.6:81//</id>
+  <link href="http://devnore.github.io/blog/categories/hemmateknik/atom.xml" rel="self"/>
+  <link href="http://devnore.github.io/"/>
+  <updated>2014-09-03T23:56:19+02:00</updated>
+  <id>http://devnore.github.io/</id>
   <author>
     <name><![CDATA[Simon Ingelsson]]></name>
     
@@ -14,38 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Nytt chassi]]></title>
-    <link href="http://172.16.1.6:81//blog/2014/04/07/nytt-chassi/"/>
-    <updated>2014-04-07T16:27:18+02:00</updated>
-    <id>http://172.16.1.6:81//blog/2014/04/07/nytt-chassi</id>
-    <content type="html"><![CDATA[<p>Suget efter ett nytt chassi stiger för var dag som går. Nu börjar det dock bli så grovt att det snart blir dags för en beställning, speciellt då jag fixat ny stomme till skrivbordet som går att höja och sänka. Jag har sen snart två år ägt en upphängning för chassi som passar till denna stomme dock är problemet att mitt befintliga chassi är på tok för stort för att få plats i denna upphängning.</p>
-
-<p><a href="http://simon.ispy.se/blog/wp-content/uploads/2014/04/1692980.jpg"><img src="http://simon.ispy.se/blog/wp-content/uploads/2014/04/1692980-300x257.jpg" alt="CORSAIR CARBIDE 200R ATX BLACK" /></a></p>
-
-<p>Efter mycket om och men så beslutade jag att skippa inköpet av detta chassit. Med det nya skrivbordet så löste jag det med upphängning vid sidan av bordet vilket betyder att mitt gamla monsterchassi får plats.</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Raspberry Pi]]></title>
-    <link href="http://172.16.1.6:81//blog/2014/04/07/raspberry-pi/"/>
+    <link href="http://devnore.github.io/blog/2014/04/07/raspberry-pi/"/>
     <updated>2014-04-07T16:18:47+02:00</updated>
-    <id>http://172.16.1.6:81//blog/2014/04/07/raspberry-pi</id>
+    <id>http://devnore.github.io/blog/2014/04/07/raspberry-pi</id>
     <content type="html"><![CDATA[<p>Här ska det stå lite om min raspberry som jag för tillfället kör raspbmc på</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Synology Diskstation]]></title>
-    <link href="http://172.16.1.6:81//blog/2014/01/22/synology/"/>
-    <updated>2014-01-22T15:14:59+01:00</updated>
-    <id>http://172.16.1.6:81//blog/2014/01/22/synology</id>
-    <content type="html"><![CDATA[<p>Efter att ha lekt en stund med den D-link Sharestation (eller vad den nu hette) som jag lånat av Mattias så bestämmde jag mig för att införskaffa en riktig NAS.</p>
-
-<p>Det blev en Synology Diskstation DS214
-<a href="http://simon.ispy.se/blog/wp-content/uploads/2014/01/DS214.jpg"><img src="http://simon.ispy.se/blog/wp-content/uploads/2014/01/DS214.jpg" alt="DS214" /></a></p>
-
-<p>Efter mycket pill så har jag äntligen fått över både mitt och hildas iPhoto-bibliotek till denna underbara lilla svarta burk.</p>
 ]]></content>
   </entry>
   

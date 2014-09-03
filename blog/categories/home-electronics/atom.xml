@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: home electronics | Simons Blogg]]></title>
+  <link href="http://devnore.github.io/blog/categories/home-electronics/atom.xml" rel="self"/>
+  <link href="http://devnore.github.io/"/>
+  <updated>2014-09-03T23:56:19+02:00</updated>
+  <id>http://devnore.github.io/</id>
+  <author>
+    <name><![CDATA[Simon Ingelsson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Synology Diskstation]]></title>
+    <link href="http://devnore.github.io/blog/2014/01/22/synology/"/>
+    <updated>2014-01-22T15:14:59+01:00</updated>
+    <id>http://devnore.github.io/blog/2014/01/22/synology</id>
+    <content type="html"><![CDATA[<p>After looking at a D-link NAS that I borrowed from a friend I decided that i should buy a real NAS.</p>
+
+<p>I Finally settled on the Synology Diskstation DS214<a href="http://simon.ispy.se/blog/wp-content/uploads/2014/01/DS214.jpg"><img src="http://simon.ispy.se/blog/wp-content/uploads/2014/01/DS214.jpg" alt="DS214" /></a></p>
+
+<p>I&#8217;v gone through the checklist, migrating all unarranged photos (from 4 different iphoto-libraries, and my very old photos from pre 2008 ) into the NAS.</p>
+]]></content>
+  </entry>
+  
+</feed>

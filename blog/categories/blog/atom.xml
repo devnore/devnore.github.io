@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: blog | Simons Blogg]]></title>
-  <link href="http://172.16.1.6:81//blog/categories/blog/atom.xml" rel="self"/>
-  <link href="http://172.16.1.6:81//"/>
-  <updated>2014-09-03T22:30:56+02:00</updated>
-  <id>http://172.16.1.6:81//</id>
+  <link href="http://devnore.github.io/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://devnore.github.io/"/>
+  <updated>2014-09-03T23:56:19+02:00</updated>
+  <id>http://devnore.github.io/</id>
   <author>
     <name><![CDATA[Simon Ingelsson]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress]]></title>
-    <link href="http://172.16.1.6:81//blog/2014/09/03/octopress/"/>
+    <link href="http://devnore.github.io/blog/2014/09/03/octopress/"/>
     <updated>2014-09-03T15:01:50+02:00</updated>
-    <id>http://172.16.1.6:81//blog/2014/09/03/octopress</id>
+    <id>http://devnore.github.io/blog/2014/09/03/octopress</id>
     <content type="html"><![CDATA[<h2>Starting using octopress.</h2>
 
 <p>I&#8217;v decided to try using octopress in favor of wordpress. I&rsquo;m hoping this will go better than my attempt to use <a href="https://ghost.org">Ghost</a> .</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vagrant | Simons Blogg]]></title>
   <link href="http://devnore.github.io/blog/categories/vagrant/atom.xml" rel="self"/>
   <link href="http://devnore.github.io/"/>
-  <updated>2014-09-04T01:10:17+02:00</updated>
+  <updated>2014-09-04T08:48:13+02:00</updated>
   <id>http://devnore.github.io/</id>
   <author>
     <name><![CDATA[Simon Ingelsson]]></name>
@@ -20,8 +20,9 @@
     <id>http://devnore.github.io/blog/2014/08/28/dnsmasq-in-osx</id>
     <content type="html"><![CDATA[<h2>Installing Dnsmasq</h2>
 
-<pre><code>brew up &amp;&amp; brew install dnsmasq
-</code></pre>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>    brew up <span class="p">&amp;</span>amp<span class="p">;&amp;</span>amp<span class="p">;</span> brew install dnsmasq
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>The installation process will output several commands that you can use to start Dnsmasq automatically with a default configuration. I used the following commands but you should use whichever commands brew tells you to:</p>
 
@@ -31,45 +32,61 @@
 
 <p>One the many, many things that Dnsmasq can do is compare DNS requests against a database of patterns and use these to determine the correct response. I use this functionality to match any request which ends in .dev and send <code>10.200.200.10</code> in response. The Dnsmasq configuration directive to do this is very simple:</p>
 
-<pre><code>address=/dev/10.200.200.10
-</code></pre>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>    <span class="nv">address</span><span class="o">=</span>/dev/10.200.200.10
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Insert this into your <code>/usr/local/etc/dnsmasq.conf</code> file (I put it near the example <code>address=/double-click.net/127.0.0.1</code> entry just to keep them all together) and save the file.</p>
 
 <p>You may need to restart Dnsmasq to get it to recognise this change. Restarting Dnsmasq is the same as any other service running under <code>launchd</code>:</p>
 
-<pre><code>sudo launchctl stop homebrew.mxcl.dnsmasq
-sudo launchctl start homebrew.mxcl.dnsmasq
-</code></pre>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>    sudo launchctl stop homebrew.mxcl.dnsmasq
+</span><span class='line'>    sudo launchctl start homebrew.mxcl.dnsmasq
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>You can test Dnsmasq by sending it a DNS query using the <code>dig</code> utility. Pick a name ending in <code>dev</code> and use dig to query your new DNS server:</p>
 
-<pre><code>dig local.site.dev @127.0.0.1
-</code></pre>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>    dig local.site.dev @127.0.0.1
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>You should get back a response something like:</p>
 
-<pre><code>;; ANSWER SECTION:
-local.site.dev. 0 IN    A   10.200.200.10
-</code></pre>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>    <span class="p">;;</span> ANSWER SECTION:
+</span><span class='line'>    local.site.dev. <span class="m">0</span> IN    A   10.200.200.10
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h2>Configuring OS X</h2>
 
-<pre><code>sudo mkdir -p /etc/resolver
-# Create file for domain .dev
-sudo tee /etc/resolver/dev &gt;/dev/null &lt;&lt;EOF
-nameserver 127.0.0.1
-EOF
-</code></pre>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>    sudo mkdir -p /etc/resolver
+</span><span class='line'>    <span class="c"># Create file for domain .dev</span>
+</span><span class='line'>    sudo tee /etc/resolver/dev &gt;/dev/null <span class="p">&amp;</span>lt<span class="p">;&amp;</span>lt<span class="p">;</span>EOF
+</span><span class='line'>    nameserver 127.0.0.1
+</span><span class='line'>    EOF
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h2>Testing.</h2>
 
-<pre><code># Make sure you haven't broken your DNS.
-ping -c 1 www.google.com
-# Check that .dev names work
-ping -c 1 this.is.a.test.dev
-ping -c 1 iam.the.walrus.dev
-</code></pre>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>    <span class="c"># Make sure you haven&amp;rsquo;t broken your DNS.</span>
+</span><span class='line'>    ping -c <span class="m">1</span> www.google.com
+</span><span class='line'>    <span class="c"># Check that .dev names work</span>
+</span><span class='line'>    ping -c <span class="m">1</span> this.is.a.test.dev
+</span><span class='line'>    ping -c <span class="m">1</span> iam.the.walrus.dev
+</span></code></pre></td></tr></table></div></figure></p>
 ]]></content>
   </entry>
   

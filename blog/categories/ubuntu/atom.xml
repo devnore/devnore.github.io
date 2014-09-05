@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ubuntu | Simons Blogg]]></title>
+  <link href="http://devnore.github.io/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://devnore.github.io/"/>
+  <updated>2014-09-05T11:18:38+02:00</updated>
+  <id>http://devnore.github.io/</id>
+  <author>
+    <name><![CDATA[Simon Ingelsson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Online Resize]]></title>
+    <link href="http://devnore.github.io/blog/2014/09/05/online-resize/"/>
+    <updated>2014-09-05T11:13:29+02:00</updated>
+    <id>http://devnore.github.io/blog/2014/09/05/online-resize</id>
+    <content type="html"><![CDATA[<p>Scan the bus to find the right disk</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install lsscsi
+</span><span class='line'><span class="nv">$ </span>lsscsi <span class="p">|</span> grep <span class="o">[</span>/dev/sdb<span class="o">]</span>
+</span><span class='line'><span class="o">[</span>2:0:1:0<span class="o">]</span>    disk    VMware   Virtual disk     1.0   /dev/sdb&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;rescan disk&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;echo <span class="m">1</span> &gt; /sys/bus/scsi/devices/2:0:1:0/rescan
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>cfdisk /dev/sdb 
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>skapa en ny partition av det utrymmet som är ledigt på disken. och se till att den är av typ 8e (Linux LVM)</p>
+
+<p><code>partprobe -s</code>
+Registrerar den nya partitionen så att kerneln känner till den.</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pvcreate /dev/sdb2
+</span><span class='line'>Physical volume <span class="p">&amp;</span>ldquo<span class="p">;</span>/dev/sdb2<span class="p">&amp;</span>rdquo<span class="p">;</span> successfully created
+</span><span class='line'>vgextend VolGroup00 /dev/sdb2
+</span><span class='line'>lvextend -l +100%FREE /dev/VolGroup00/LogVol00
+</span><span class='line'>resize2fs /dev/VolGroup00/LogVol00
+</span><span class='line'>df -h
+</span></code></pre></td></tr></table></div></figure></p>
+]]></content>
+  </entry>
+  
+</feed>
